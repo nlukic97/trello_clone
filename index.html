@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="elements">
+        <div class="dropzone">
+            <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+              This div is draggable
+            </div>
+            <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)"> <!-- why do we need this-->
+              This div is also draggable
+            </div>
+            <div id="draggable" draggable="true" ondragstart="event.dataTransfer.setData('text/plain',null)">
+              This div is draggable too !
+            </div>
+          </div>
+          <div class="dropzone"></div>
+          <div class="dropzone"></div>
+          <div class="dropzone"></div>
+    </div>   
+</body>
+</html>

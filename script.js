@@ -5,12 +5,13 @@ var lists;
 if(storedList != null){
   lists = JSON.parse(storedList)
 } else {
+  // for the first initial load just as an example
   lists = {
     backlog: [
-      {content:'This div is draggable1'},
-      {content:'This div is draggable2'},
-      {content:'This div is draggable3'},
-      {content:'This div is draggable4'},
+      {content:'This is a draggable element. Feel free to add more of your own!'},
+      {content:'This is a draggable element. Feel free to add more of your own!'},
+      {content:'This is a draggable element. Feel free to add more of your own!'},
+      {content:'This is a draggable element. Feel free to add more of your own!'},
     ],
     in_progress:[],
     complete:[],

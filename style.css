@@ -1,21 +1,32 @@
-.elements {
-    display: flex;
-    justify-content: space-around;
+* {
+  margin: 0;
+  padding: 0;
 }
 
-#draggable {
-    width: 200px;
-    height: 20px;
-    text-align: center;
-    background: white;
-    margin: 10px 0;
-  }
-  
-  .dropzone {
-    width: 200px;
-    background: blueviolet;
-    margin-bottom: 10px;
-    padding: 10px;
-    height: min-content;
-    min-height: 40px;
-  }
+.elements {
+  display: flex;
+  justify-content: space-around;
+}
+
+.draggable {
+  width: 200px;
+  height: 20px;
+  text-align: center;
+  background: white;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.dropzone {
+  width: 200px;
+  background: blueviolet;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: min-content;
+  min-height: 40px;
+}
+
+.dragging {
+  border: 1px solid rgba(0,0,0,0.5);
+  opacity: 0.5;
+}

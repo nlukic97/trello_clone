@@ -23,8 +23,6 @@ Object.keys(lists).forEach(key=>{
   let list = document.querySelector(`.dropzone#${key}`)
   lists[key].forEach(item=>{
     let element = createCard(item.content)
-    
-    
     list.appendChild(element)
   })
 })
@@ -32,11 +30,11 @@ Object.keys(lists).forEach(key=>{
 // functiom to create the card
 function createCard(content){
   let element  = document.createElement('div')
-    element.classList = 'draggable pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md'
-    element.draggable = 'true'
-    element.ondragstart="event.dataTransfer.setData('text/html',null)"
-    element.innerText = content
-    return element
+  element.classList = 'draggable pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md'
+  element.draggable = 'true'
+  element.ondragstart="event.dataTransfer.setData('text/html',null)"
+  element.innerText = content
+  return element
 }
 
 
@@ -66,7 +64,7 @@ document.querySelectorAll('.dropzone').forEach(container=>{
   container.addEventListener('dragover',(event)=>{
     event.preventDefault()
     const afterElement = getDragAfterElement(container,event.clientY)
-
+    
     if(afterElement.element == null){
       container.appendChild(dragged)
     } else {
@@ -114,7 +112,7 @@ document.addEventListener("drop", function(event) {
   if (event.target.className == "dropzone") {
     event.target.style.background = "";
   }
-
+  
   remakeList()
 }, false);
 
@@ -123,23 +121,52 @@ function remakeList(){
   document.querySelectorAll('.elements .dropzone').forEach(list=>{
     let property = list.getAttribute('id')
     lists[property] = [];
-
+    
     list.querySelectorAll('div.draggable').forEach(item=>{
       lists[property].push({content:item.innerText})
     })
-
+    
   })
-
+  
   localStorage.setItem('lists',JSON.stringify(lists))
 }
 
-
+// Button called to add open the card creation box
 document.querySelectorAll('button.add-card-btn').forEach(btn=>{
-  btn.addEventListener('click',function(){
-    let target = this.parentElement.querySelector('.dropzone');
+  btn.addEventListener('click',function(){    
+    document.querySelectorAll('.dropzone-container').forEach(container=>{
+      container.classList.remove('creating')
+    })
+    this.parentElement.classList.add('creating')
+  })
+})
 
-    let element = createCard('Some content')
-    target.appendChild(element)
-    remakeList()
+// Click on the 'add' button during card creation
+document.querySelectorAll('.insert-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    let value = this.parentElement.parentElement.querySelector('textarea').value
+    
+    if(value != ''){
+      let element = createCard(value)
+      this.parentElement.parentElement.parentElement.querySelector('.dropzone').appendChild(element)
+      this.parentElement.parentElement.parentElement.classList.remove('creating')
+      remakeList()
+    }
+    
+  })
+})
+
+// click on the 'cancel' button during card creation
+document.querySelectorAll('.cancel-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    this.parentElement.parentElement.parentElement.classList.remove('creating')
+  })
+})
+
+// When a user types inside a textarea, it will automatically be rezised as the user types to not have a scroll bar
+document.querySelectorAll('textarea').forEach(box=>{
+  box.addEventListener('input',function(){
+    this.style.height = 'auto';
+    this.style.height = (this.scrollHeight) + 'px';
   })
 })

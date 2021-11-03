@@ -1,1 +1,2 @@
-Readme 
+# Trello clone
+- created using the Tailwind library

@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Trello Clone | Nikola Lukic</title>
+
+  <!-- JavaScript -->
+  <script src="script.js" defer></script>
+
+  <!-- Css & Tailwind import -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  
+</head>
+<body>
+  
+  <div class="elements flex justify-start">
+    
+    <!-- 1. Backlog -->
+    <div class="dropzone-container bg-gray-300 rounded ml-4 mr-4">
+      <h1 class="text-gray-800 font-bold">Backlog</h1>
+      
+      <div class="dropzone" id="backlog"></div>
+      
+      <!-- Hidden - this will be displayed when adding a new card to this 'dropzone-container' -->
+      <div class="creation-box pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md">
+        <textarea class="w-full" id="cardInput" placeholder="Enter a title for this card"></textarea>
+        <div class="flex justify-end">
+          <button class="insert-btn bg-blue-400 hover:bg-blue-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1 mr-1">Add</button>
+          <button class="cancel-btn bg-red-400 hover:bg-red-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1">Cancel</button>
+        </div>
+      </div>
+      
+      <button class="add-card-btn bg-blue-400 hover:bg-blue-300 pr-3 pl-3 pt-1 pb-1 text-white inline-block w-full rounded-md">+ Add a card</button>
+    </div>
+    
+    <!-- 2. In progress -->
+    <div class="dropzone-container bg-gray-300 rounded ml-4 mr-4">
+      <h1 class="text-gray-800 font-bold">In progress</h1>
+      <div class="dropzone" id="in_progress"></div>
+
+      <!-- Hidden - this will be displayed when adding a new card to this 'dropzone-container' -->
+      <div class="creation-box pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md">
+        <textarea class="w-full" id="cardInput" placeholder="Enter a title for this card"></textarea>
+        <div class="flex justify-end">
+          <button class="insert-btn bg-blue-400 hover:bg-blue-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1 mr-1">Add</button>
+          <button class="cancel-btn bg-red-400 hover:bg-red-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1">Cancel</button>
+        </div>
+      </div>
+      
+      <button class="add-card-btn bg-blue-400 hover:bg-blue-300 pr-3 pl-3 pt-1 pb-1 text-white inline-block w-full rounded-md">+ Add a card</button>
+    </div>
+    
+
+    <!-- 3. Complete -->
+    <div class="dropzone-container bg-gray-300 rounded ml-4 mr-4">
+      <h1 class="text-gray-800 font-bold">Complete</h1>
+      <div class="dropzone" id="complete"></div>
+      
+      <!-- Hidden - this will be displayed when adding a new card to this 'dropzone-container' -->
+      <div class="creation-box pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md">
+        <textarea class="w-full" id="cardInput" placeholder="Enter a title for this card"></textarea>
+        <div class="flex justify-end">
+          <button class="insert-btn bg-blue-400 hover:bg-blue-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1 mr-1">Add</button>
+          <button class="cancel-btn bg-red-400 hover:bg-red-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1">Cancel</button>
+        </div>
+      </div>
+      
+      <button class="add-card-btn bg-blue-400 hover:bg-blue-300 pr-3 pl-3 pt-1 pb-1 text-white inline-block w-full rounded-md">+ Add a card</button>
+    </div>
+    
+    
+    <!-- 4. On hold -->
+    <div class="dropzone-container bg-gray-300 rounded ml-4 mr-4">
+      <h1 class="text-gray-800 font-bold">On Hold</h1>
+      <div class="dropzone" id="on_hold"></div>
+
+      <!-- Hidden - this will be displayed when adding a new card to this 'dropzone-container' -->
+      <div class="creation-box pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md">
+        <textarea class="w-full" id="cardInput" placeholder="Enter a title for this card"></textarea>
+        <div class="flex justify-end">
+          <button class="insert-btn bg-blue-400 hover:bg-blue-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1 mr-1">Add</button>
+          <button class="cancel-btn bg-red-400 hover:bg-red-300 rounded-md text-white pl-3 pr-3 pt-1 pb-1">Cancel</button>
+        </div>
+      </div>
+      
+      <button class="add-card-btn bg-blue-400 hover:bg-blue-300 pr-3 pl-3 pt-1 pb-1 text-white inline-block w-full rounded-md">+ Add a card</button>
+    </div>
+    
+  </div>   
+</body>
+</html>

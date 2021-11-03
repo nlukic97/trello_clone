@@ -1,0 +1,54 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.elements {
+  background:url('./images/sea.jpg') no-repeat center center/cover;
+  min-height: 100vh;
+  min-width: min-content;
+}
+
+.draggable {
+  text-align: left;
+  margin: 10px 0;
+  box-sizing: border-box;
+}
+
+.dropzone-container {
+  width: 200px;
+  min-width: 200px;
+  margin-bottom: 10px;
+  padding: 10px;
+  height: min-content;
+  box-sizing: border-box;
+}
+
+.dropzone-container textarea {
+  display: block;
+  overflow: hidden;
+  resize: none;
+}
+
+.dropzone {
+  margin-bottom: 10px;
+  min-height: 40px;
+}
+
+.dragging {
+  border: 1px solid rgba(0,0,0,0.5);
+  opacity: 0.5;
+}
+
+/* Creating of new cards */
+.dropzone-container .creation-box {
+  display: none;
+}
+
+.dropzone-container.creating .creation-box {
+  display: block;
+}
+
+.dropzone-container.creating .add-card-btn {
+  display: none;
+}

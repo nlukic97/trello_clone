@@ -8,10 +8,10 @@ if(storedList != null){
   // for the first initial load just as an example
   lists = {
     backlog: [
-      {content:'This is a draggable element. Feel free to add more of your own!'},
-      {content:'This is a draggable element. Feel free to add more of your own!'},
-      {content:'This is a draggable element. Feel free to add more of your own!'},
-      {content:'This is a draggable element. Feel free to add more of your own!'},
+      {content:'Users can add a video as their profile picture'},
+      {content:'Users can add other users as friends'},
+      {content:'Users can publish livestreams'},
+      {content:'Users can create groups'},
     ],
     in_progress:[],
     complete:[],
@@ -23,7 +23,7 @@ Object.keys(lists).forEach(key=>{
   let list = document.querySelector(`.dropzone#${key}`)
   lists[key].forEach(item=>{
     let element = document.createElement('div')
-    element.classList.add('draggable')
+    element.classList = 'draggable pr-3 pl-3 pt-1 pb-1 bg-white'
     element.draggable = 'true'
     element.ondragstart="event.dataTransfer.setData('text/html',null)"
     element.innerText = item.content
@@ -89,14 +89,14 @@ function getDragAfterElement(container,y){
 
 document.addEventListener("dragenter", function(event) {
   // highlight potential drop target when the draggable element enters it
-  if (event.target.className == "dropzone") event.target.style.background = "purple";
+  // if (event.target.className == "dropzone") event.target.style.background = "purple";
 }, false);
 
 
 
 document.addEventListener("dragleave", function(event) {
   // reset background of potential drop target when the draggable element leaves it
-  if (event.target.className == "dropzone") event.target.style.background = "";
+  // if (event.target.className == "dropzone") event.target.style.background = "";
 }, false);
 
 

@@ -6,20 +6,28 @@
 .elements {
   display: flex;
   justify-content: space-around;
+  /* need to fix this */
 }
 
 .draggable {
-  /* width: 200px; */
-  /* height: 20px; */
   text-align: center;
   margin: 10px 0;
   box-sizing: border-box;
 }
 
-.dropzone {
+.dropzone-container {
+  /* float: left; */
   width: 200px;
+  min-width: 200px;
   margin-bottom: 10px;
   padding: 10px;
+  height: min-content;
+  /* min-height: 40px; */
+  box-sizing: border-box;
+}
+
+.dropzone {
+  margin-bottom: 10px;
   height: min-content;
   min-height: 40px;
 }

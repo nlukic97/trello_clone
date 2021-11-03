@@ -22,15 +22,22 @@ if(storedList != null){
 Object.keys(lists).forEach(key=>{
   let list = document.querySelector(`.dropzone#${key}`)
   lists[key].forEach(item=>{
-    let element = document.createElement('div')
-    element.classList = 'draggable pr-3 pl-3 pt-1 pb-1 bg-white'
-    element.draggable = 'true'
-    element.ondragstart="event.dataTransfer.setData('text/html',null)"
-    element.innerText = item.content
+    let element = createCard(item.content)
+    
     
     list.appendChild(element)
   })
 })
+
+// functiom to create the card
+function createCard(content){
+  let element  = document.createElement('div')
+    element.classList = 'draggable pr-3 pl-3 pt-1 pb-1 bg-white cursor-move rounded-md'
+    element.draggable = 'true'
+    element.ondragstart="event.dataTransfer.setData('text/html',null)"
+    element.innerText = content
+    return element
+}
 
 
 
@@ -125,3 +132,14 @@ function remakeList(){
 
   localStorage.setItem('lists',JSON.stringify(lists))
 }
+
+
+document.querySelectorAll('button.add-card-btn').forEach(btn=>{
+  btn.addEventListener('click',function(){
+    let target = this.parentElement.querySelector('.dropzone');
+
+    let element = createCard('Some content')
+    target.appendChild(element)
+    remakeList()
+  })
+})
